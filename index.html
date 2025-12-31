@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STAAR Super Prep</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header>
+            <h1 class="logo">🚀 STAAR Prep</h1>
+            <p class="subtitle">Master 5th Grade with confidence!</p>
+        </header>
+
+        <!-- Login View -->
+        <main id="login-view" class="view active">
+            <div class="login-card">
+                <span class="lock-icon">🔒</span>
+                <h2>Secret Access</h2>
+                <p>Enter the class passcode to start:</p>
+                <input type="text" id="passcode-input" placeholder="Code" autocomplete="off">
+                <button id="login-btn" class="btn">Unlock</button>
+                <p id="login-error" class="error-text hidden">Wrong code! Try again.</p>
+            </div>
+        </main>
+
+        <!-- Home View: Subject Selection -->
+        <main id="home-view" class="view">
+            <h2>Pick a Subject to Start:</h2>
+            <div class="subject-grid">
+                <div class="subject-card" data-subject="math">
+                    <span class="subject-icon">📐</span>
+                    <h3 class="subject-title">Math</h3>
+                    <p>Numbers, shapes, and logic!</p>
+                </div>
+                <div class="subject-card" data-subject="reading">
+                    <span class="subject-icon">📚</span>
+                    <h3 class="subject-title">Reading</h3>
+                    <p>Stories and vocabulary power!</p>
+                </div>
+                <div class="subject-card" data-subject="science">
+                    <span class="subject-icon">🔬</span>
+                    <h3 class="subject-title">Science</h3>
+                    <p>Space, earth, and life!</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Quiz View -->
+        <main id="quiz-view" class="view">
+            <div class="quiz-container">
+                <div class="progress-header">
+                    <span id="subject-label">Math</span>
+                    <span id="question-counter">Question 1/5</span>
+                </div>
+
+                <div class="question-area">
+                    <h3 id="question-text" class="question-text">Loading question...</h3>
+                    <div id="options-grid" class="options-grid">
+                        <!-- Options injected here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Results View -->
+        <main id="results-view" class="view">
+            <div class="quiz-container results-container">
+                <h2>Quiz Complete!</h2>
+                <div class="stars-container" id="stars-display">
+                    ★★★
+                </div>
+                <p>Your Score:</p>
+                <div id="final-score" class="score-display">80%</div>
+                <p id="motivational-text">Great job, superstar!</p>
+
+                <button id="home-btn" class="btn" style="margin-top: 2rem;">Play Again</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Feedback Modal -->
+    <div id="feedback-modal" class="modal-overlay">
+        <div class="feedback-card">
+            <span id="feedback-icon" class="feedback-icon">🎉</span>
+            <h2 id="feedback-title" class="feedback-title">Correct!</h2>
+            <p id="feedback-explanation" class="feedback-text">Explanation goes here.</p>
+            <button id="next-btn" class="btn">Next Question ➜</button>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="math_generator.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
